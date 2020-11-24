@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="788.0" prefWidth="1142.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyItemsFormController">
+   <children>
+      <JFXTextField editable="false" layoutX="319.0" layoutY="72.0" prefHeight="54.0" prefWidth="157.0" promptText="Modify Items">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </JFXTextField>
+      <TableView fx:id="tblItems" layoutX="108.0" layoutY="204.0" onMouseClicked="#rowClickedOnActon" prefHeight="470.0" prefWidth="578.0" style="-fx-font-size: 15;">
+        <columns>
+          <TableColumn fx:id="clmItemCode" prefWidth="91.0" text="Item Code" />
+          <TableColumn fx:id="clmDescription" prefWidth="229.0" text="Description" />
+            <TableColumn fx:id="clmPackSize" prefWidth="83.0" text="Pack Size" />
+            <TableColumn fx:id="clmUnitPrice" prefWidth="79.0" text="Unit Price" />
+            <TableColumn fx:id="clmQtyonHand" prefWidth="95.0" text="QTYonHand" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtItemCode" editable="false" labelFloat="true" layoutX="778.0" layoutY="224.0" prefHeight="44.0" prefWidth="90.0" promptText="Item Code">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="778.0" layoutY="305.0" prefHeight="44.0" prefWidth="262.0" promptText="Description">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPackSize" labelFloat="true" layoutX="778.0" layoutY="395.0" prefHeight="44.0" prefWidth="103.0" promptText="Pack Size">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtUnitPrice" labelFloat="true" layoutX="778.0" layoutY="481.0" prefHeight="44.0" prefWidth="103.0" promptText="Unit Price">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQTYonHand" labelFloat="true" layoutX="774.0" layoutY="566.0" prefHeight="44.0" prefWidth="111.0" promptText="QTY on Hand">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnModifyItems" buttonType="RAISED" layoutX="909.0" layoutY="628.0" onAction="#btnModifyItemsOnAction" prefHeight="65.0" prefWidth="69.0" styleClass="btnModifyItem" stylesheets="@../css/AdminButtonImageSet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="540.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/home4.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

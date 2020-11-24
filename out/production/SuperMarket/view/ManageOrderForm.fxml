@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="788.0" prefWidth="1142.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageOrderFormController">
+   <children>
+      <TableView fx:id="tblItems" layoutX="14.0" layoutY="195.0" onMouseClicked="#itemTableRowClickedOnActon" prefHeight="274.0" prefWidth="666.0" style="-fx-font-size: 15;">
+         <columns>
+            <TableColumn fx:id="tblItemClmItemCode" prefWidth="82.0" text="Item Code" />
+            <TableColumn fx:id="tblItemClmDescription" prefWidth="308.0" text="Description" />
+            <TableColumn fx:id="tblItemClmPackSize" prefWidth="101.0" text="Pack Size" />
+            <TableColumn fx:id="tblItemClmUnitPrice" minWidth="0.0" prefWidth="98.0" text="Unit Price" />
+            <TableColumn fx:id="tblItemClmQTY" prefWidth="76.0" text="QTY" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="lblItems" editable="false" layoutX="302.0" layoutY="151.0" prefHeight="34.0" prefWidth="48.0" promptText="Items">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </JFXTextField>
+      <TableView fx:id="tblCart" layoutX="22.0" layoutY="539.0" onMouseClicked="#cartTableRowClickedOnActon" prefHeight="183.0" prefWidth="785.0" style="-fx-font-size: 15;">
+         <columns>
+            <TableColumn fx:id="tblCartClmItemCode" prefWidth="82.0" text="Item Code" />
+            <TableColumn fx:id="tblCartClmDescription" prefWidth="329.0" text="Description" />
+            <TableColumn fx:id="tblCartClmUnitPrice" prefWidth="106.0" text="Unit Price" />
+            <TableColumn fx:id="tblCartClmQTY" minWidth="0.0" prefWidth="74.0" text="QTY" />
+            <TableColumn fx:id="tblCartClmTotal" minWidth="0.0" prefWidth="99.0" text="Total" />
+            <TableColumn fx:id="tblCartClmDiscount" minWidth="0.0" prefWidth="94.0" text="Discount" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnAddtoCart" buttonType="RAISED" layoutX="1005.0" layoutY="428.0" onAction="#btnAddtoCartOnAction" prefHeight="58.0" prefWidth="58.0" styleClass="btnAddToCart" stylesheets="@../css/UserButtonImageSet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnConfirmOrder" buttonType="RAISED" layoutX="947.0" layoutY="708.0" onAction="#btnConfirmOrderOnAction" prefHeight="47.0" prefWidth="58.0" styleClass="btnConfirmOrder" stylesheets="@../css/UserButtonImageSet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1043.0" layoutY="708.0" onAction="#btnCancelOrderOnAction" prefHeight="47.0" prefWidth="48.0" styleClass="btnCancelOrder" stylesheets="@../css/UserButtonImageSet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="txtQTYonHand" labelFloat="true" layoutX="722.0" layoutY="442.0" onAction="#qtyFieldOnEnter" prefHeight="39.0" prefWidth="126.0" promptText="QTY on Hand" style="-fx-text-fill: ae5858;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnRemoveItem" buttonType="RAISED" layoutX="857.0" layoutY="706.0" onAction="#btnRemoveItemOnAction" prefHeight="58.0" prefWidth="58.0" styleClass="btnRemoveItemFromCart" stylesheets="@../css/UserButtonImageSet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnConfirmOrderEdit" buttonType="RAISED" layoutX="957.0" layoutY="589.0" onAction="#btnConfirmOrderEditOnAction" prefHeight="58.0" prefWidth="48.0" styleClass="btnConfirmOrderEdits" stylesheets="@../css/UserButtonImageSet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="txtQTYonHand2" labelFloat="true" layoutX="822.0" layoutY="598.0" onAction="#qty2FieldOnEnter" prefHeight="39.0" prefWidth="126.0" promptText="QTY on Hand">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDescription" editable="false" labelFloat="true" layoutX="723.0" layoutY="235.0" prefHeight="39.0" prefWidth="251.0" promptText="Description" style="-fx-text-fill: ae5858;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtItemCode" editable="false" labelFloat="true" layoutX="726.0" layoutY="166.0" prefHeight="39.0" prefWidth="104.0" promptText="Item Code" style="-fx-text-fill: ae5858;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPackSize" editable="false" labelFloat="true" layoutX="722.0" layoutY="304.0" prefHeight="39.0" prefWidth="126.0" promptText="Pack Size" style="-fx-text-fill: ae5858;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtUnitPrice" editable="false" labelFloat="true" layoutX="722.0" layoutY="373.0" prefHeight="39.0" prefWidth="112.0" promptText="Unit Price" style="-fx-text-fill: ae5858;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="964.0" layoutY="18.0" text="Order ID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtOrderID" layoutX="1034.0" layoutY="18.0" prefHeight="39.0" prefWidth="93.0" style="-fx-text-fill: red;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="21.0" layoutY="744.0" text="Total">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTotal" editable="false" layoutX="69.0" layoutY="735.0" prefHeight="39.0" prefWidth="119.0" style="-fx-text-fill: red;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Line endX="1005.0" layoutX="120.0" layoutY="495.0" startX="-103.0" stroke="#a52af8" />
+      <JFXComboBox fx:id="cmbOrderID" layoutX="14.0" layoutY="77.0" onAction="#cmbOrderIDOnAction" prefHeight="39.0" prefWidth="119.0" promptText="Order ID" style="-fx-font-size: 15;" />
+      <JFXTextField fx:id="txtName" editable="false" labelFloat="true" layoutX="266.0" layoutY="18.0" prefHeight="39.0" prefWidth="166.0" promptText="Name" style="-fx-text-fill: #d311d3;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="570.0" layoutY="18.0" text="Date">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDate" editable="false" layoutX="612.0" layoutY="18.0" prefHeight="39.0" prefWidth="138.0" style="-fx-text-fill: red;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="761.0" layoutY="18.0" text="Time">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTime" editable="false" layoutX="803.0" layoutY="18.0" prefHeight="21.0" prefWidth="126.0" style="-fx-text-fill: red;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <JFXTextField fx:id="txtContact" labelFloat="true" layoutX="14.0" layoutY="18.0" onKeyPressed="#txtContactKeyPressed" onKeyReleased="#txtContactKeyReleased" onKeyTyped="#txtContactKeyTyped" prefHeight="39.0" prefWidth="104.0" promptText="Contact">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtcID" editable="false" labelFloat="true" layoutX="156.0" layoutY="18.0" prefHeight="39.0" prefWidth="79.0" promptText="ID" style="-fx-text-fill: #d311d3;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDiscount" labelFloat="true" layoutX="864.0" layoutY="443.0" onAction="#txtDiscountOnEnter" prefHeight="39.0" prefWidth="126.0" promptText="Discount" style="-fx-text-fill: ae5858;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <TextField fx:id="txtSearchItem" layoutX="415.0" layoutY="149.0" onKeyPressed="#SearchItemKeyPressed" onKeyReleased="#SearchItemKeyReleased" onKeyTyped="#SearchItemKeyTyped" prefHeight="39.0" prefWidth="199.0" promptText="Search Item" style="-fx-background-radius: 30;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Line endX="1005.0" layoutX="119.0" layoutY="129.0" startX="-103.0" stroke="#a52af8" />
+      <ImageView fitHeight="39.0" fitWidth="79.0" layoutX="255.0" layoutY="471.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXTextField fx:id="lblItems1" editable="false" layoutX="375.0" layoutY="497.0" prefHeight="34.0" prefWidth="48.0" promptText="Items" text="Cart">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </JFXTextField>
+   </children>
+</AnchorPane>

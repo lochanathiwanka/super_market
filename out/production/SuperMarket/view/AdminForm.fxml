@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminFormController">
+   <children>
+      <ImageView accessibleRole="BUTTON" fitHeight="42.0" fitWidth="93.0" layoutX="22.0" layoutY="22.0" onMouseClicked="#btnBackOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/blackArrowBack.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <AnchorPane fx:id="childPane" layoutX="244.0" layoutY="6.0" prefHeight="788.0" prefWidth="1142.0" />
+      <ImageView fx:id="btnAddItem" accessibleRole="BUTTON" fitHeight="52.0" fitWidth="69.0" layoutX="63.0" layoutY="239.0" onMouseClicked="#btnAddItems" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/addItem2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="btnRemoveItem" accessibleRole="BUTTON" fitHeight="64.0" fitWidth="70.0" layoutX="57.0" layoutY="324.0" onMouseClicked="#btnDeleteItems" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/remove2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="btnModifyItem" accessibleRole="BUTTON" fitHeight="64.0" fitWidth="64.0" layoutX="63.0" layoutY="408.0" onMouseClicked="#btnModifyItems" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/modifyItem1.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="btnSystemReports" accessibleRole="BUTTON" fitHeight="79.0" fitWidth="98.0" layoutX="50.0" layoutY="482.0" onMouseClicked="#btnSystemReports" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/systemReport2.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserFormController">
+   <children>
+      <ImageView accessibleRole="BUTTON" fitHeight="42.0" fitWidth="93.0" layoutX="32.0" layoutY="32.0" onMouseClicked="#btnBackOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/blackArrowBack.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Line endX="100.0" endY="449.5" layoutX="147.0" layoutY="328.0" startX="100.0" startY="-328.0" />
+      <AnchorPane fx:id="childPane" layoutX="251.0" layoutY="5.0" prefHeight="788.0" prefWidth="1142.0" />
+      <ImageView fx:id="btnAddCustomer" accessibleRole="BUTTON" fitHeight="84.0" fitWidth="85.0" layoutX="72.0" layoutY="252.0" onMouseClicked="#btnAddnewCustomerOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/addCustomer6.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="btnManageOrder" accessibleRole="BUTTON" fitHeight="64.0" fitWidth="66.0" layoutX="78.0" layoutY="364.0" onMouseClicked="#btnManageOrdersOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/manageOrder.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

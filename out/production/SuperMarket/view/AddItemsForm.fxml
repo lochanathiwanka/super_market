@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="788.0" prefWidth="1142.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddItemsFormController">
+   <children>
+      <JFXTextField editable="false" layoutX="459.0" layoutY="144.0" prefHeight="56.0" prefWidth="152.0" promptText="Add Items">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </JFXTextField>
+      <JFXTextField fx:id="txtItemCode" focusColor="#44c93d" labelFloat="true" layoutX="229.0" layoutY="363.0" prefHeight="48.0" prefWidth="112.0" promptText="Item Code" style="-fx-prompt-text-fill: #44c93d;" unFocusColor="#44c93d">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDescription" focusColor="#44c93d" labelFloat="true" layoutX="229.0" layoutY="458.0" prefHeight="48.0" prefWidth="282.0" promptText="Description" style="-fx-prompt-text-fill: #44c93d;" unFocusColor="#44c93d">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPackSize" focusColor="#44c93d" labelFloat="true" layoutX="229.0" layoutY="558.0" prefHeight="48.0" prefWidth="112.0" promptText="Pack Size" style="-fx-prompt-text-fill: #44c93d;" unFocusColor="#44c93d">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtUnitPrice" focusColor="#44c93d" labelFloat="true" layoutX="607.0" layoutY="363.0" prefHeight="48.0" prefWidth="112.0" promptText="Unit Price" style="-fx-prompt-text-fill: #44c93d;" unFocusColor="#44c93d">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQTYonHand" focusColor="#44c93d" labelFloat="true" layoutX="607.0" layoutY="458.0" prefHeight="48.0" prefWidth="129.0" promptText="QTY onHand" style="-fx-prompt-text-fill: #44c93d;" unFocusColor="#44c93d">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtTotalItems" editable="false" focusColor="#44c93d" labelFloat="true" layoutX="888.0" layoutY="247.0" prefHeight="48.0" prefWidth="84.0" promptText="Total Items" style="-fx-prompt-text-fill: #44c93d;" unFocusColor="#44c93d">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </JFXTextField>
+      <JFXButton fx:id="btnAddItems" buttonType="RAISED" layoutX="633.0" layoutY="628.0" onAction="#btnAddItemsOnAction" prefHeight="65.0" prefWidth="60.0" styleClass="btnAddItem" stylesheets="@../css/AdminButtonImageSet.css" text=" " textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="109.0" layoutY="265.0" text="Date">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDate" editable="false" layoutX="179.0" layoutY="256.0" prefHeight="39.0" prefWidth="145.0" style="-fx-text-fill: red;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="361.0" layoutY="265.0" text="Time">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTime" editable="false" layoutX="431.0" layoutY="256.0" prefHeight="21.0" prefWidth="126.0" style="-fx-text-fill: red;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="540.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/home4.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

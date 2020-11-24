@@ -1,0 +1,20 @@
+.btnRemoveItem{
+    -fx-background-image: url("../images/remove5.png");
+    -fx-background-size: 60px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 90%;
+}
+
+.btnAddItem{
+    -fx-background-image: url("../images/add4.png");
+    -fx-background-size: 60px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 90%;
+}
+
+.btnModifyItem{
+    -fx-background-image: url("../images/refresh.png");
+    -fx-background-size: 55px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 90%;
+}

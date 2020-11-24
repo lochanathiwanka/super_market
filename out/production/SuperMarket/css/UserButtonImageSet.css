@@ -1,0 +1,34 @@
+.btnAddToCart{
+    -fx-background-image: url("../images/addToCart3.png");
+    -fx-background-size: 70px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 90%;
+}
+
+.btnCancelOrder{
+    -fx-background-image: url("../images/remove8.png");
+    -fx-background-size: 50px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 90%;
+}
+
+.btnRemoveItemFromCart{
+    -fx-background-image: url("../images/remove5.png");
+    -fx-background-size: 50px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 90%;
+}
+
+.btnConfirmOrder{
+    -fx-background-image: url("../images/confirmation.png");
+    -fx-background-size: 45px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 90%;
+}
+
+.btnConfirmOrderEdits{
+    -fx-background-image: url("../images/modifyItem2.png");
+    -fx-background-size: 45px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 90%;
+}

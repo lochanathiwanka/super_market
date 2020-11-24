@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserLoginFormController">
+    <children>
+        <JFXTextField editable="false" layoutX="324.0" layoutY="50.0" prefHeight="83.0" prefWidth="122.0" promptText="Login">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="44.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </JFXTextField>
+        <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="245.0" layoutY="246.0" promptText="User ID or Name">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </JFXTextField>
+        <JFXPasswordField fx:id="pwdPasswordField" labelFloat="true" layoutX="245.0" layoutY="346.0" prefHeight="54.0" prefWidth="281.0" promptText="Password">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </JFXPasswordField>
+        <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="342.0" layoutY="469.0" onAction="#btnLoginOnAction" prefHeight="44.0" prefWidth="87.0" style="-fx-background-color: black; -fx-background-radius: 30;" text="Login" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+    </children>
+</AnchorPane>

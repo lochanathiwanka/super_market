@@ -1,0 +1,71 @@
+create database supermarket;
+use supermarket;
+CREATE TABLE Customer(
+                         cid VARCHAR(6) NOT NULL,
+                         name VARCHAR(30) NOT NULL,
+                         address VARCHAR(100) NOT NULL,
+                         city VARCHAR(15),
+                         contact VARCHAR(15) NOT NULL,
+                         CONSTRAINT PRIMARY KEY (cid)
+);
+
+CREATE TABLE Orders(
+                       orderID VARCHAR(6) NOT NULL,
+                       cid VARCHAR(6),
+                       orderDate VARCHAR(20) NOT NULL,
+                       orderTime VARCHAR(10) NOT NULL,
+                       CONSTRAINT PRIMARY KEY (orderID),
+                       CONSTRAINT FOREIGN KEY(cID) REFERENCES Customer(cID) on Delete Cascade on Update Cascade
+);
+
+CREATE TABLE Item(
+                     itemCode VARCHAR(6) NOT NULL,
+                     description VARCHAR(50) NOT NULL,
+                     packSize VARCHAR(20),
+                     unitPrice DECIMAL(10,2) NOT NULL,
+                     qtyOnHand INT(5) NOT NULL,
+                     stockedDate VARCHAR(20) NOT NULL,
+                     stockedTime VARCHAR(10) NOT NULL,
+                     status VARCHAR(20) default 'InStock',
+                     CONSTRAINT PRIMARY KEY (itemCode)
+);
+
+CREATE TABLE OrderDetail(
+                            orderId VARCHAR(6) default '000',
+                            itemCode VARCHAR(6) NOT NULL,
+                            qtyOnHand INT(5) NOT NULL,
+                            discount DECIMAL(10,2) default 00.00,
+                            totPrice DECIMAL(10,2) NOT NULL,
+                            CONSTRAINT PRIMARY KEY (orderId,itemCode),
+                            CONSTRAINT FOREIGN KEY (orderId) REFERENCES Orders(orderID) on Delete Cascade on Update Cascade,
+                            CONSTRAINT FOREIGN KEY (itemCode) REFERENCES Item(itemCode) on Delete Cascade on Update Cascade
+);
+
+
+
+
+
+
+
+
+
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P001','Naadu','10kg',105.00,3000,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P002','Keerisamba','5Kg ',525.00,200,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P003','Keerisamba','10Kg',995.00,36,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P004','Keerisamba','50Kg',4100.00,36,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P005','Red Raw Rice','5kg',60.00,6000,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P006','Red Raw Rice','10Kg',560.00,300,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P007','Red Raw Rice','50Kg',5230.00,80,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P008','White Raw Rice','5Kg',275.00,130,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P009','White Raw Rice','50Kg',2600.00,13,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P010','Wattana Dhal','500g',90.00,83,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P011','Wattana Dhal','1Kg',170.00,40,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P012','Mysoor Dhal','500g',90.00,89,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P013','Mysoor Dhal','1Kg',180.00,59,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P014','Orient Green Gram','500g',118.00,39,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P015','Orient Green Gram','1Kg',220.00,12,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P016','Anchor F/C Milk powder','450g',220.00,93,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P017','Anchor F/C Milk powder','1Kg',580.00,40,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P018','Anchor N/F Milk powder','1Kg',560.00,33,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P019','Milo Packet','400g',240.00,33,'2020-Aug-10','10:00: AM');
+INSERT INTO Item (itemCode, description, packSize, unitPrice, qtyOnHand,stockedDate,stockedTime) VALUES('P020','Lipton Ceylon Tea','100g',107.00,40,'2020-Aug-10','10:00: AM');

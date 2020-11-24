@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="788.0" prefWidth="1142.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SystemReportsFormController">
+   <children>
+      <JFXTextField editable="false" layoutX="409.0" layoutY="64.0" prefHeight="49.0" prefWidth="92.0" promptText="Income" style="-fx-font-size: 22;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </JFXTextField>
+      <JFXTextField fx:id="txtMostMovableItem" editable="false" labelFloat="true" layoutX="908.0" layoutY="585.0" promptText="Most Movable Item" style="-fx-font-size: 18; -fx-text-fill: red;">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </JFXTextField>
+      <JFXTextField fx:id="txtLeastMovableItem" editable="false" labelFloat="true" layoutX="908.0" layoutY="670.0" promptText="Least Movable Item" style="-fx-font-size: 18; -fx-text-fill: red;">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </JFXTextField>
+      <JFXDatePicker fx:id="datePicker" layoutX="72.0" layoutY="434.0" onAction="#datePickerOnAction" onKeyPressed="#pickDateKeyPressed" onKeyReleased="#pickDateKeyReleased" onKeyTyped="#pickDateKeyTyped" promptText="Pick a Date" style="-fx-font-size: 15;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXDatePicker>
+      <Label layoutX="206.0" layoutY="139.0" text="Daily">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="146.0" layoutY="173.0" prefHeight="118.0" prefWidth="160.0" style="-fx-background-color: #ab47bc; -fx-border-color: black; -fx-border-width: 3;">
+         <children>
+            <Label fx:id="txtDailyIncome" alignment="CENTER" layoutX="7.0" layoutY="59.0" prefHeight="30.0" prefWidth="125.0" style="-fx-font-size: 20; -fx-text-fill: white;" text="00.00" wrapText="true" />
+            <Label fx:id="txtDayOnPane" alignment="CENTER" layoutX="56.0" layoutY="14.0" prefHeight="30.0" prefWidth="48.0" style="-fx-font-size: 20; -fx-text-fill: white;" text="31" wrapText="true" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="422.0" layoutY="139.0" text="Monthly">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="375.0" layoutY="173.0" prefHeight="118.0" prefWidth="160.0" style="-fx-background-color: #00897b; -fx-border-color: black; -fx-border-width: 3;">
+         <children>
+            <Label fx:id="txtMonthlyIncome" alignment="CENTER" layoutX="7.0" layoutY="59.0" prefHeight="30.0" prefWidth="125.0" style="-fx-font-size: 20; -fx-text-fill: white;" text="00.00" wrapText="true" />
+            <Label fx:id="txtMonthOnPane" alignment="CENTER" layoutX="47.0" layoutY="14.0" prefHeight="30.0" prefWidth="67.0" style="-fx-font-size: 20; -fx-text-fill: white;" text="Aug" wrapText="true" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="636.0" layoutY="139.0" text="Yearly">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="604.0" layoutY="173.0" prefHeight="118.0" prefWidth="160.0" style="-fx-background-color: #ec407a; -fx-border-color: black; -fx-border-width: 3;">
+         <children>
+            <Label fx:id="txtYearlyIncome" alignment="CENTER" layoutX="7.0" layoutY="59.0" prefHeight="30.0" prefWidth="125.0" style="-fx-font-size: 20; -fx-text-fill: white;" text="00.00" wrapText="true" />
+            <Label fx:id="txtYearOnPane" alignment="CENTER" layoutX="47.0" layoutY="14.0" prefHeight="30.0" prefWidth="67.0" style="-fx-font-size: 20; -fx-text-fill: white;" text="2020" wrapText="true" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblItems" layoutX="512.0" layoutY="327.0" prefHeight="171.0" prefWidth="519.0" style="-fx-font-size: 15;">
+        <columns>
+          <TableColumn fx:id="clmItemCode" prefWidth="91.0" text="Item Code" />
+          <TableColumn fx:id="clmDescription" prefWidth="262.0" text="Description" />
+            <TableColumn fx:id="clmPackSize" minWidth="0.0" prefWidth="86.0" text="Pack Size" />
+            <TableColumn fx:id="clmMovable" minWidth="0.0" prefWidth="78.0" text="Movable" />
+        </columns>
+      </TableView>
+      <Label layoutX="952.0" layoutY="78.0" text="Date">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDate" editable="false" layoutX="994.0" layoutY="78.0" prefHeight="30.0" prefWidth="134.0" style="-fx-text-fill: red;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <AnchorPane fx:id="dailyIncomePane" layoutX="78.0" layoutY="488.0" prefHeight="81.0" prefWidth="160.0" style="-fx-background-color: #ffeb3b; -fx-border-color: black; -fx-border-width: 3;">
+         <children>
+            <Label fx:id="txtIncomeOnSpecificDate" alignment="CENTER" layoutX="18.0" layoutY="26.0" prefHeight="30.0" prefWidth="125.0" style="-fx-font-size: 20; -fx-text-fill: black;" text="00.00" wrapText="true" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="lblMonthlyIncomeOnSpecificDate" layoutX="253.0" layoutY="622.0" prefHeight="23.0" prefWidth="143.0" style="-fx-font-size: 18; -fx-text-fill: red;" />
+      <Label fx:id="lblYearlyncomeOnSpecificDate" layoutX="253.0" layoutY="688.0" prefHeight="23.0" prefWidth="143.0" style="-fx-font-size: 18; -fx-text-fill: red;" />
+      <JFXComboBox fx:id="cmbMonth" labelFloat="true" layoutX="72.0" layoutY="612.0" onAction="#cmbMonthOnAction" prefHeight="30.0" prefWidth="149.0" promptText="Select Month" style="-fx-font-size: 15;" visibleRowCount="4" />
+      <Line endX="928.0" layoutX="212.0" layoutY="318.0" startX="-197.0" />
+      <JFXComboBox fx:id="cmbYear" labelFloat="true" layoutX="72.0" layoutY="678.0" onAction="#cmbYearOnAction" prefHeight="30.0" prefWidth="149.0" promptText="Select Year" style="-fx-font-size: 15;" visibleRowCount="4" />
+      <ImageView fitHeight="131.0" fitWidth="125.0" layoutX="906.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/emoji4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="540.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/home4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="271.0" fitWidth="547.0" layoutX="421.0" layoutY="510.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/17.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
